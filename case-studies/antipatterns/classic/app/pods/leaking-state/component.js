@@ -16,9 +16,13 @@ export default Component.extend({
 
   tagName: 'label',
 
-  droid: EmberObject.create({
-    name: 'R2D2',
-  }),
+  init() {
+    this._super(...arguments);
+
+    this.set('droid',EmberObject.create({
+      name: 'R2D2',
+    }));
+  },
 
   actions: {
     setName(event) {
